@@ -4,6 +4,7 @@ node_modules/
 # Editors
 .vscode/
 .idea/
+.idx/
 
 # MacOS files
 .DS_Store
