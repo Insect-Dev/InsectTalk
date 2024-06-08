@@ -1,136 +1,132 @@
 {
-    "nodes": [
+  "nodes": [
+    {
+      "id": 1,
+      "type": "text",
+      "text": "Welcome to the adventure!",
+      "next": 2
+    },
+    {
+      "id": 2,
+      "type": "choice",
+      "prompt": "What would you like to do next?",
+      "choices": [
         {
-            "id": 1,
-            "type": "text",
-            "text": "Welcome to the adventure!",
-            "next": 2
+          "text": "Explore the forest",
+          "next": 3
         },
         {
-            "id": 2,
-            "type": "choice",
-            "prompt": "What would you like to do next?",
-            "choices": [
-                {
-                    "text": "Explore the forest",
-                    "next": 3
-                },
-                {
-                    "text": "Talk to the old wizard",
-                    "next": 4
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "type": "if",
-            "condition": {
-                "operator": ">",
-                "value1": {
-                    "sourceNodeId": 13
-                },
-                "value2": {
-                    "value": 8
-                }
-            },
-            "trueBranch": 6,
-            "falseBranch": 5
-        },
-        {
-            "id": 14,
-            "type": "delay",
-            "length": 500,
-            "next": 15
-        },
-        {
-            "id": 15,
-            "type": "randomSelector",
-            "branches": [
-                16,
-                17,
-                18
-            ]
-        },
-        {
-            "id": 16,
-            "type": "text",
-            "text": "Go into the world and find that spell!",
-            "next": 7
-        },
-        {
-            "id": 17,
-            "type": "text",
-            "text": "You've seen the quest. Go on and get that spell.",
-            "next": 7
-        },
-        {
-            "id": 18,
-            "type": "text",
-            "text": "Hmmm... yeah... go now.",
-            "next": 7
-        },
-        {
-            "id": 4,
-            "type": "function",
-            "methodName": "giveQuest",
-            "parameters": [
-                {
-                    "value": "Get the Slinty spell"
-                }
-            ],
-            "returnType": "void",
-            "next": 14
-        },
-        {
-            "id": 5,
-            "type": "text",
-            "text": "You decided to explore the forest.",
-            "next": 8
-        },
-        {
-            "id": 6,
-            "type": "text",
-            "text": "You're not feeling adventurous today, so you head home.",
-            "next": 7
-        },
-        {
-            "id": 7,
-            "type": "end"
-        },
-        {
-            "id": 8,
-            "type": "function",
-            "methodName": "encounterEnemy",
-            "parameters": [
-                {
-                    "value": "dragon"
-                }
-            ],
-            "returnType": "void",
-            "next": 10
-        },
-        {
-            "id": 10,
-            "type": "text",
-            "text": "You encountered a fearsome dragon!",
-            "next": 11
-        },
-        {
-            "id": 11,
-            "type": "text",
-            "text": "You defeated the dragon and found a treasure chest.",
-            "next": 7
-        },
-        {
-            "id": 12,
-            "type": "start",
-            "next": 1
-        },
-        {
-            "id": 13,
-            "type": "function",
-            "methodName": "getTiredLevel",
-            "returnType": "boolean"
+          "text": "Talk to the old wizard",
+          "next": 4
         }
-    ]
+      ]
+    },
+    {
+      "id": 3,
+      "type": "if",
+      "condition": {
+        "operator": ">",
+        "value1": {
+          "sourceNodeId": 13
+        },
+        "value2": {
+          "value": 8
+        }
+      },
+      "trueBranch": 6,
+      "falseBranch": 5
+    },
+    {
+      "id": 14,
+      "type": "delay",
+      "length": 500,
+      "next": 15
+    },
+    {
+      "id": 15,
+      "type": "randomSelector",
+      "branches": [16, 17, 18]
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "text": "Go into the world and find that spell!",
+      "next": 7
+    },
+    {
+      "id": 17,
+      "type": "text",
+      "text": "You've seen the quest. Go on and get that spell.",
+      "next": 7
+    },
+    {
+      "id": 18,
+      "type": "text",
+      "text": "Hmmm... yeah... go now.",
+      "next": 7
+    },
+    {
+      "id": 4,
+      "type": "function",
+      "methodName": "giveQuest",
+      "parameters": [
+        {
+          "value": "Get the Slinty spell"
+        }
+      ],
+      "returnType": "void",
+      "next": 14
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "text": "You decided to explore the forest.",
+      "next": 8
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "text": "You're not feeling adventurous today, so you head home.",
+      "next": 7
+    },
+    {
+      "id": 7,
+      "type": "end"
+    },
+    {
+      "id": 8,
+      "type": "function",
+      "methodName": "encounterEnemy",
+      "parameters": [
+        {
+          "value": "dragon"
+        }
+      ],
+      "returnType": "void",
+      "next": 10
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "text": "You encountered a fearsome dragon!",
+      "next": 11
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "text": "You defeated the dragon and found a treasure chest.",
+      "next": 7
+    },
+    {
+      "id": 12,
+      "type": "start",
+      "next": 1
+    },
+    {
+      "id": 13,
+      "type": "function",
+      "methodName": "getTiredLevel",
+      "returnType": "boolean"
+    }
+  ]
 }
