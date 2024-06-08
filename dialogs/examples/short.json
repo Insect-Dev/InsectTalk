@@ -1,0 +1,34 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "type": "start",
+            "next": 1
+        },
+        {
+            "id": 1,
+            "type": "text",
+            "text": "Hello World!",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "type": "choice",
+            "prompt": "What do you want to talk about?",
+            "choices": [
+                {
+                    "text": "Exit",
+                    "next": 3
+                },
+                {
+                    "text": "Repeat from the beggining",
+                    "next": 1
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "end"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+# Modules
+node_modules/
+
+# Editors
+.vscode/
+.idea/
+
+# MacOS files
+.DS_Store
+
+# Other generated files
+dist/
