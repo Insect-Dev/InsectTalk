@@ -7,6 +7,7 @@
     "prettier:w": "bun prettier -w ."
   },
   "devDependencies": {
+    "@types/bun": "^1.1.3",
     "bun-types": "latest"
   },
   "peerDependencies": {
