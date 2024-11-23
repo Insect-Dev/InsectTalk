@@ -1,0 +1,49 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "type": "start",
+            "next": 1
+        },
+        {
+            "id": 1,
+            "type": "text",
+            "text": "Hello there! Welcome to the shop!",
+            "next": 2
+        },
+        {
+            "id": 2,
+            "type": "shop",
+            "items": [
+                {
+                    "name": "Diamond Sword",
+                    "description": "A mighty weapon that allows its wielder to defeat their enemies with ease!",
+                    "price": "100",
+                    "next": 3
+                },
+                {
+                    "name": "Healing Potion",
+                    "description": "A powerful potion that allows you to heal yourself even in the heat of a battle!",
+                    "price": "40"
+                }
+            ],
+            "next": 4
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "text": "You bought the diamond sword and this is a custom message!",
+            "next": 2
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "text": "Thanks for using the shop! Bye!",
+            "next": 5
+        },
+        {
+            "id": 5,
+            "type": "end"
+        }
+    ]
+}
