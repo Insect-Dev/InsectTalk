@@ -1,5 +1,6 @@
 import DialogController from './DialogController'
 import loadDialog from './loadDialog'
+import { registerAdvancedNodes } from './nodes/advanced'
 import { registerFlowControlNodes } from './nodes/flow-control'
 
 const dialog = await loadDialog('allNodes')
@@ -7,6 +8,8 @@ const dialog = await loadDialog('allNodes')
 const dialogController = new DialogController(dialog)
 
 registerFlowControlNodes(dialogController)
+
+registerAdvancedNodes(dialogController)
 
 dialogController.registerMethod('giveQuest', (args) => {
   console.log('Added quest', args[0])
