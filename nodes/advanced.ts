@@ -38,23 +38,24 @@ const handleShopNode: NodeHandler = async (
 
   const answer = parseInt(
     await controller.getStandardInput()(
-      `Choose an item to purchase (1-${shopNode.items.length}): `,
+      `Choose an item to purchase (1-${shopNode.items.length} and 0 to exit): `,
     ),
   )
 
+  if (answer == 0) {
+    return shopNode.next
+  }
+
   const selectedItem = shopNode.items[answer - 1]
-  controller.getStandardOutput()(
-    `You have selected ${selectedItem.name}. This would trigger the purchase logic.`,
-  )
+  controller.getStandardOutput()(`You have selected ${selectedItem.name}. This would trigger the purchase logic.`)
 
-  // Implement the purchase logic here
-  // ...
-
-  return shopNode.next
+  controller.getStandardOutput()(`You have been charged $${selectedItem.price}`)
+  
+  return selectedItem.next ?? shopNode.id
 }
 
-const registerFlowControlNodes = (controller: DialogController) => {
+const registerAdvancedNodes = (controller: DialogController) => {
   controller.registerNodeHandler('shop', handleShopNode)
 }
 
-export { registerFlowControlNodes, handleShopNode }
+export { registerAdvancedNodes, handleShopNode }
